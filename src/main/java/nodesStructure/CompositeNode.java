@@ -1,13 +1,14 @@
 
 package nodesStructure;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class CompositeNode implements ICompositeNode {
 
     private String code;
     private String renderer;
-    private List<INode> nodes;
+    private List<INode> nodes = new LinkedList<>();
 
     public CompositeNode(String code, String renderer) {
         this.code = code;
@@ -29,4 +30,7 @@ public class CompositeNode implements ICompositeNode {
         return renderer;
     }
 
+    public void addNode(INode iNode){
+        nodes.add(iNode);
+    }
 }

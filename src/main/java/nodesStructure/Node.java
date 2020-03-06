@@ -3,11 +3,11 @@ package nodesStructure;
 public class Node implements INode{
 
     private String code;
-    private String render;
+    private String renderer;
 
-    public Node(String code, String render) {
+    public Node(String code, String renderer) {
         this.code = code;
-        this.render = render;
+        this.renderer = renderer;
     }
 
     @Override
@@ -17,7 +17,7 @@ public class Node implements INode{
 
     @Override
     public String getRenderer() {
-        return render;
+        return renderer;
     }
 
 }
