@@ -52,8 +52,8 @@ public class MyStructureTest {
 
     @Test
     public void shouldReturnNodeFoundByCode() {
-        String result = structure.findByCode("code3").getCode();
-        assertEquals("code3", result);
+        String result = structure.findByCode("code1").getCode();
+        assertEquals("code1", result);
     }
 
     @Test

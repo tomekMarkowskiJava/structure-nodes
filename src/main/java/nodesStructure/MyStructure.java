@@ -5,10 +5,11 @@ import java.util.List;
 
 public class MyStructure implements IMyStructure {
     private List<INode> nodes = new LinkedList<>();
-    private List<INode> temp = new LinkedList<>();
+    private List<INode> flatNodes = new LinkedList<>();
 
     private List<INode> getFlattenedNodes() {
-        return flatten(nodes);
+        flatten(nodes);
+        return flatNodes;
     }
 
     @Override
@@ -30,23 +31,21 @@ public class MyStructure implements IMyStructure {
         return getFlattenedNodes().size();
     }
 
-//Method to find nested nodes in CompositeNode
+//Method to flatten structure of nodes from nested nodes in CompositeNode
 
-    private List<INode> flatten(List <INode> nodes){
+    private void flatten(List<INode> nodes) {
 
-
-        for (INode node : nodes){
-            if (node instanceof ICompositeNode){
+        for (INode node : nodes) {
+            if (node instanceof ICompositeNode) {
                 flatten(((ICompositeNode) node).getNodes());
             }
-            if (!temp.contains(node)){
-                temp.add(node);
+            if (!flatNodes.contains(node)) {
+                flatNodes.add(node);
             }
         }
-        return temp;
     }
 
-    public void addNode(INode node){
+    public void addNode(INode node) {
         nodes.add(node);
     }
 }
