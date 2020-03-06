@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class MyStructureTest {
 
@@ -64,25 +65,25 @@ public class MyStructureTest {
     @Test
     public void shouldReturnNullWhenNotFoundByCode() {
         INode result = structure.findByCode("code10");
-        assertEquals(null, result);
+        assertNull(result);
 
     }
 
     @Test
     public void shouldReturnNullWhenNotFoundByRenderer() {
         INode result = structure.findByRenderer("renderer8");
-        assertEquals(null, result);
+        assertNull(result);
     }
 
     @Test
     public void shouldReturnNullWithFoundByCodeInEmptyStructure() {
         INode result = emptyStructure.findByCode("code1");
-        assertEquals(null, result);
+        assertNull(result);
 
     }@Test
     public void shouldReturnNullWithFoundByRendererInEmptyStructure() {
         INode result = emptyStructure.findByRenderer("renderer1");
-        assertEquals(null, result);
+        assertNull(result);
 
     }
 }

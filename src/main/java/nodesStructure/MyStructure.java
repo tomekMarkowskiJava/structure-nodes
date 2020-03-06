@@ -5,7 +5,7 @@ import java.util.List;
 
 public class MyStructure implements IMyStructure {
     private List<INode> nodes = new LinkedList<>();
-    List<INode> temp = new LinkedList<>();
+    private List<INode> temp = new LinkedList<>();
 
     private List<INode> getFlattenedNodes() {
         return flatten(nodes);
