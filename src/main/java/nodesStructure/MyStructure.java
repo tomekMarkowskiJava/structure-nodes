@@ -8,6 +8,7 @@ public class MyStructure implements IMyStructure {
     private List<INode> flatNodes = new LinkedList<>();
 
     private List<INode> getFlattenedNodes() {
+        flatNodes.clear();
         flatten(nodes);
         return flatNodes;
     }
@@ -36,11 +37,12 @@ public class MyStructure implements IMyStructure {
     private void flatten(List<INode> nodes) {
 
         for (INode node : nodes) {
-            if (node instanceof ICompositeNode) {
-                flatten(((ICompositeNode) node).getNodes());
-            }
             if (!flatNodes.contains(node)) {
                 flatNodes.add(node);
+
+                if (node instanceof ICompositeNode) {
+                    flatten(((ICompositeNode) node).getNodes());
+                }
             }
         }
     }

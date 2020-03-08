@@ -24,6 +24,7 @@ public class MyStructureTest {
     public static void setUpNodes() {
         compositeNode1.addNode(node1);
         compositeNode1.addNode(node2);
+        compositeNode1.addNode(compositeNode1);
         compositeNode2.addNode(compositeNode1);
     }
 
